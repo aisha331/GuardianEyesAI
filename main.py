@@ -10,7 +10,7 @@ cap = cv2.VideoCapture(0)
 def mail_alart(to,text):
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
-    server.login('secbot88robot@gmail.com', 'secret508')
+    server.login('secbot88robot@gmail.com', 'pass of your email')
     server.sendmail('secbot88robot@gmail.com',to, text)
     winsound.Beep(500, 200)
 
@@ -29,7 +29,7 @@ def night_detection():
                 continue
             x ,y, w , h =cv2.boundingRect(c)
             cv2.rectangle(frame1, (x, y), (x+w , y+h), (0,255,0) , 2)
-            mail_alart("youssef.elkhalily44@gmail.com","There is a movement in the college sir, you have to pay attention to this notice ")
+            mail_alart("aishabastawesy@gmail.com","There is a movement in the college sir, you have to pay attention to this notice ")
             winsound.Beep(500, 200)
         cv2.imshow ('Sarah camera',  frame1)
         if cv2.waitKey(1) == ord('q'):
